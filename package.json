@@ -1,0 +1,33 @@
+{
+  "name": "@mbanq/dupe",
+  "version": "0.0.1",
+  "description": "Create fake data to dupe your frontend",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [
+    "fake",
+    "data",
+    "banking",
+    "frontend",
+    "tests"
+  ],
+  "author": {
+    "name": "FinLink, Inc.",
+    "email": "dev@mbanq.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mbanq/dupe.git"
+  },
+  "homepage": "https://github.com/mbanq/dupe",
+  "bugs": {
+    "url": "https://github.com/mbanq/dupe/issues"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "standard": "^12.0.1"
+  }
+}
