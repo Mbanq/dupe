@@ -3,3 +3,39 @@
 
 Mbanq uses `dupe` to create the data that can be used during software
 development or for running the tests.
+
+
+
+## Usage
+
+### Node.js
+
+    var mbanq = require('mbanq');
+
+    var randomName = mbanq.name.full(); // pkha romdol
+    var randomEmail = mbanq.name.email(); // phkachan@gmbail.com
+    var randomText = mbanq.text.sentence(); // random sentence with random words
+
+
+## Methods
+* text
+    * sentence
+* name
+    * first
+    * last
+    * full
+    * email
+* location
+    * contry
+    * city
+* finance
+    * amount
+    * transactionType
+    * accountNr
+    * accountType
+    * digitNumber
+    * cardNumber
+
+## Test
+    npm install .
+    npm run test
