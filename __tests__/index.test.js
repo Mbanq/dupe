@@ -2,10 +2,6 @@
 
 const mbanq = require('../src/index.js')
 
-test(`calling mbanq without params`, () => {
-  expect(mbanq()).toEqual(`Hello from Mbanq`)
-})
-
-test(`calling mbanq without params`, () => {
-  expect(mbanq(`Hail Satan`)).toEqual(`Hail Satan`)
+test('call mbanq property', () => {
+  expect(mbanq.text.sentence()).toBeTruthy()
 })
