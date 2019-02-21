@@ -1,3 +1,5 @@
+'use strict'
+
 const rand = require('../util.js')
 
 const words = [

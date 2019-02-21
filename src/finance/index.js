@@ -1,3 +1,5 @@
+'use strict'
+
 const rand = require('../util.js')
 
 const amount = (max = 999999, precision = 100) => {

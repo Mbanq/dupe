@@ -1,6 +1,9 @@
+'use strict'
+
 const text = require('../../src/text/index.js')
 global.Math.random = () => 0.5
-test('show some random texts', () => {
+
+test('return number of string with provided argument', () => {
   let countSpace =
     text.sentence(3).length -
     text
@@ -11,7 +14,7 @@ test('show some random texts', () => {
   expect(countSpace).toEqual(3)
 })
 
-test('show some random texts with default arg', () => {
+test('return number of string without provided argument', () => {
   let countSpace =
     text.sentence().length -
     text

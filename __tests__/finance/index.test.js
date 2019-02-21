@@ -1,3 +1,5 @@
+'use strict'
+
 const finance = require('../../src/finance/index.js')
 
 test('generate number', () => {

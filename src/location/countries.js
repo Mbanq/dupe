@@ -1,3 +1,5 @@
+'use strict'
+
 const countries = [
   `Afghanistan`,
   `Albania`,
