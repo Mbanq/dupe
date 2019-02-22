@@ -260,7 +260,7 @@ const text = {
     for (let i = 0; i < size; i++) {
       result = `${result} ${rand(words)}`
     }
-    return result
+    return result.trim()
   }
 }
 

@@ -45,9 +45,7 @@ const transactionType = () => {
 }
 
 const accountNr = (size = 10) => {
-  return Math.random()
-    .toString()
-    .slice(2, size)
+  return Math.random().toString().slice(2, size)
 }
 
 const finance = {
