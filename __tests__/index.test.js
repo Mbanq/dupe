@@ -2,10 +2,12 @@
 
 const mbanq = require('../src/index.js')
 
-test(`calling mbanq without params`, () => {
-  expect(mbanq()).toEqual(`Hello from Mbanq`)
-})
-
-test(`calling mbanq without params`, () => {
-  expect(mbanq(`Hail Satan`)).toEqual(`Hail Satan`)
+test('call mbanq property', () => {
+  [ 'finance',
+    'location',
+    'name',
+    'text' ].forEach(key => {
+    expect(mbanq).toHaveProperty(key)
+    expect(typeof mbanq[key]).toBe('object')
+  })
 })
