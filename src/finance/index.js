@@ -11,19 +11,19 @@ const amount = (max = 999999, precision = 100) => {
   )
 }
 
-const digitNumber = (min, max) => {
+const randomInt = (min = 1, max = 999) => {
   return Math.floor(Math.random() * (max - min) + min)
 }
 
 const cardNumber = () => {
   return (
-    digitNumber(1000, 9999) +
+    randomInt(1000, 9999) +
     ' ' +
-    digitNumber(1000, 9999) +
+    randomInt(1000, 9999) +
     ' ' +
-    digitNumber(1000, 9999) +
+    randomInt(1000, 9999) +
     ' ' +
-    digitNumber(1000, 9999)
+    randomInt(1000, 9999)
   )
 }
 
@@ -44,16 +44,16 @@ const transactionType = () => {
   return rand(['deposit', 'withdrawal', 'payment', 'invoice'])
 }
 
-const accountNr = (size = 10) => {
-  return Math.random().toString().slice(2, size)
+const accountNumber = (size = 8) => {
+  return Math.random().toString().slice(2, size + 2)
 }
 
 const finance = {
   amount,
   transactionType,
-  accountNr,
+  accountNumber,
   accountType,
-  digitNumber,
+  randomInt,
   cardNumber
 }
 

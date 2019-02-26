@@ -6,8 +6,8 @@ test('finance exports following functions', () => {
   [ 'amount',
     'transactionType',
     'accountType',
-    'accountNr',
-    'digitNumber',
+    'accountNumber',
+    'randomInt',
     'cardNumber' ].forEach(key => {
     expect(finance).toHaveProperty(key)
     expect(typeof finance[key]).toBe('function')
@@ -28,8 +28,8 @@ test('return a random generate amount number with default maximun number and pre
 test('return a digit number with min and max range', () => {
   const min = 10
   const max = 100
-  expect(finance.digitNumber(min, max)).toBeLessThanOrEqual(max)
-  expect(finance.digitNumber(min, max)).toBeGreaterThanOrEqual(min)
+  expect(finance.randomInt(min, max)).toBeLessThanOrEqual(max)
+  expect(finance.randomInt(min, max)).toBeGreaterThanOrEqual(min)
 })
 
 test('return a card number with correct format', () => {
@@ -55,10 +55,10 @@ test('type of transaction is not undefined', () => {
 })
 
 test('return an account number with default size', () => {
-  expect(finance.accountNr()).toHaveLength(8)
+  expect(finance.accountNumber()).toHaveLength(8)
 })
 
 test('return an account number with size', () => {
-  const size = 12
-  expect(finance.accountNr(size)).toHaveLength(10)
+  const size = 10
+  expect(finance.accountNumber(size)).toHaveLength(10)
 })
