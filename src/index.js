@@ -5,11 +5,9 @@ const name = require('./name/index.js')
 const location = require('./location/index.js')
 const finance = require('./finance/index.js')
 
-const mbanq = {
+module.exports = {
   finance,
   location,
   name,
   text
 }
-
-module.exports = mbanq

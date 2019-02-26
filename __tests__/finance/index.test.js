@@ -14,25 +14,31 @@ test('finance exports following functions', () => {
   })
 })
 
-test('return a random generate amount number with maximun number and precision', () => {
-  const max = 999
-  const precision = 10
-  expect(finance.amount(max, precision)).not.toBeNaN()
-  expect(finance.amount(max, precision)).toBeLessThanOrEqual(max)
-})
-
-test('return a random generate amount number with default maximun number and precision', () => {
+test('returns a random amount with certain precision', () => {
   expect(finance.amount()).not.toBeNaN()
+  expect(finance.amount()).toBeLessThanOrEqual(999999)
 })
 
-test('return a digit number with min and max range', () => {
+test('returns a random amount with provided precision', () => {
+  expect(finance.amount(999, 1000)).not.toBeNaN()
+  expect(finance.amount(999, 1000)).toBeLessThanOrEqual(999)
+  const nrOfDecimals = finance.amount(999, 1000).toString().split('.')[1].length
+  expect(nrOfDecimals).toEqual(3)
+})
+
+test('returns a random integer between 1 and 999', () => {
+  expect(finance.randomInt()).toBeLessThanOrEqual(999)
+  expect(finance.randomInt()).toBeGreaterThanOrEqual(1)
+})
+
+test('returns an integer between min and max', () => {
   const min = 10
   const max = 100
   expect(finance.randomInt(min, max)).toBeLessThanOrEqual(max)
   expect(finance.randomInt(min, max)).toBeGreaterThanOrEqual(min)
 })
 
-test('return a card number with correct format', () => {
+test('returns a card number in correct format', () => {
   const cardNumber = finance.cardNumber().split(' ')
   cardNumber.map(n => {
     expect(parseInt(n)).toBeGreaterThanOrEqual(1000)
