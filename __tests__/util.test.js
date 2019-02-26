@@ -1,3 +1,5 @@
+'use strict'
+
 const rand = require('../src/util.js')
 
 test('it should random array', () => {

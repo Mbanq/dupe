@@ -4,15 +4,25 @@ const name = require('../../src/name/index.js')
 const firstNames = require('../../src/name/first.js')
 const lastNames = require('../../src/name/last.js')
 
+test('finance exports following functions', () => {
+  [ 'first',
+    'last',
+    'full',
+    'email' ].forEach(key => {
+    expect(name).toHaveProperty(key)
+    expect(typeof name[key]).toBe('function')
+  })
+})
+
 test('returns a random first name from the list', () => {
   expect(firstNames).toContain(name.first())
 })
 
-test('return a random last name from the list', () => {
+test('returns a random last name from the list', () => {
   expect(lastNames).toContain(name.last())
 })
 
-test('return full name from the list', () => {
+test('returns full name from the list', () => {
   const [ first, last ] = name.full().split(', ')
   expect(firstNames).toContain(first)
   expect(lastNames).toContain(last)

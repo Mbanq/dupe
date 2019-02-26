@@ -2,6 +2,18 @@
 
 const finance = require('../../src/finance/index.js')
 
+test('finance exports following functions', () => {
+  [ 'amount',
+    'transactionType',
+    'accountType',
+    'accountNr',
+    'digitNumber',
+    'cardNumber' ].forEach(key => {
+    expect(finance).toHaveProperty(key)
+    expect(typeof finance[key]).toBe('function')
+  })
+})
+
 test('return a random generate amount number with maximun number and precision', () => {
   const max = 999
   const precision = 10
