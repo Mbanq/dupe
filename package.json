@@ -1,6 +1,6 @@
 {
   "name": "@mbanq/dupe",
-  "version": "0.0.1-dev",
+  "version": "0.0.1",
   "description": "Create fake data to dupe your frontend or your backend",
   "main": "src/index.js",
   "scripts": {
