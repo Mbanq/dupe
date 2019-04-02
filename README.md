@@ -33,7 +33,8 @@ const randomText = dupe.text.sentence()
   - `city()` - returns a random city from the list of cities
 - finance
   - `amount(max, precision)` - returns a random amount <= `max` with the
-    provided `precision`. Default `max = 999999`, `precision = 100`
+    provided `precision`. Default `max = 999999`, `precision = 2`. Returns
+a `String`
   - `transactionType()` - returns a random transaction type from the list
   - `accountNumber(size)` - returns an 8 digit account number per default.  Can return up to 16 digit long number.
   - `accountType()` - returns a random account type from the list.

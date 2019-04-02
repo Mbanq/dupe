@@ -15,14 +15,18 @@ test('finance exports following functions', () => {
 })
 
 test('returns a random amount with certain precision', () => {
-  expect(finance.amount()).not.toBeNaN()
-  expect(finance.amount()).toBeLessThanOrEqual(999999)
+  const amount = finance.amount()
+  expect(typeof amount).toBe('string')
+  const nrOfDecimals = amount.split('.')[1].length
+  expect(Number(finance.amount())).toBeLessThanOrEqual(999999)
+  expect(nrOfDecimals).toEqual(2)
 })
 
 test('returns a random amount with provided precision', () => {
-  expect(finance.amount(999, 1000)).not.toBeNaN()
-  expect(finance.amount(999, 1000)).toBeLessThanOrEqual(999)
-  const nrOfDecimals = finance.amount(999, 1000).toString().split('.')[1].length
+  const amount = finance.amount(999, 3)
+  expect(typeof amount).toBe('string')
+  expect(Number(amount)).toBeLessThanOrEqual(999)
+  const nrOfDecimals = amount.split('.')[1].length
   expect(nrOfDecimals).toEqual(3)
 })
 
