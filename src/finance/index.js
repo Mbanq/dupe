@@ -2,13 +2,14 @@
 
 const rand = require('../util.js')
 
-const amount = (max = 999999, precision = 100) => {
+const amount = (max = 999999, precision = 2) => {
+  const decimals = Math.pow(10, precision)
   return (
     Math.floor(
-      Math.random() * (max * precision - 1 * precision) + 1 * precision
+      Math.random() * (max * decimals - 1 * decimals) + 1 * decimals
     ) /
-    (1 * precision)
-  )
+    (1 * decimals)
+  ).toFixed(precision)
 }
 
 const randomInt = (min = 1, max = 999) => {
